@@ -89,7 +89,7 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
-var keyVaultUri = new Uri("https://newton-datatrustkeyvault.vault.azure.net/");
+var keyVaultUri = new Uri("https://datatrust-keyvault-v1.vault.azure.net/");
 builder.Configuration.AddAzureKeyVault(keyVaultUri, new DefaultAzureCredential()); 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration["DefaultConnection"]));
 
@@ -132,5 +132,4 @@ using (var scope = app.Services.CreateScope())
     SampleData.Create(context);
 }
 
-var port = Environment.GetEnvironmentVariable("PORT");
-app.Run($"http://0.0.0.0:{port}");
+app.Run();

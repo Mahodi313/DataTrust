@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataTrust.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250131150230_init")]
+    [Migration("20250131172905_init")]
     partial class init
     {
         /// <inheritdoc />
