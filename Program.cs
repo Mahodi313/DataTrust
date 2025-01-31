@@ -132,4 +132,5 @@ using (var scope = app.Services.CreateScope())
     SampleData.Create(context);
 }
 
-app.Run();
+var port = Environment.GetEnvironmentVariable("PORT");
+app.Run($"http://0.0.0.0:{port}");
