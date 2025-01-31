@@ -93,6 +93,8 @@ var keyVaultUri = new Uri("https://datatrust-keyvault-v1.vault.azure.net/");
 builder.Configuration.AddAzureKeyVault(keyVaultUri, new DefaultAzureCredential()); 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration["DefaultConnection"]));
 
+builder.Services.AddApplicationInsightsTelemetry();
+
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
